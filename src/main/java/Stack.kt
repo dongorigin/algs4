@@ -3,7 +3,7 @@
  */
 class Stack<Item> : Iterable<Item> {
     private var first: Node<Item>? = null
-    private var n = 0
+    private var size = 0
 
     private class Node<Item>(
             val item: Item,
@@ -13,14 +13,14 @@ class Stack<Item> : Iterable<Item> {
     fun push(item: Item) {
         val oldFirst = first
         first = Node(item, oldFirst)
-        n++
+        size++
     }
 
     fun pop(): Item {
         first?.let {
             val item = it.item
             first = it.next
-            n--
+            size--
             return item
         } ?: throw NoSuchElementException()
     }
@@ -30,7 +30,7 @@ class Stack<Item> : Iterable<Item> {
     }
 
     fun size(): Int {
-        return n
+        return size
     }
 
     override fun iterator(): Iterator<Item> {
