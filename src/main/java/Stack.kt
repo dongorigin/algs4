@@ -18,10 +18,9 @@ class Stack<Item> : Iterable<Item> {
 
     fun pop(): Item {
         first?.let {
-            val item = it.item
             first = it.next
             size--
-            return item
+            return it.item
         } ?: throw NoSuchElementException()
     }
 
