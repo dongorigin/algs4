@@ -5,11 +5,6 @@ class Stack<Item> : Iterable<Item> {
     private var first: Node<Item>? = null
     private var size = 0
 
-    private class Node<Item>(
-            val item: Item,
-            var next: Node<Item>? = null
-    )
-
     fun push(item: Item) {
         val oldFirst = first
         first = Node(item, oldFirst)
@@ -36,16 +31,4 @@ class Stack<Item> : Iterable<Item> {
         return NodeIterator(first)
     }
 
-    private class NodeIterator<Item>(var current: Node<Item>?) : Iterator<Item> {
-        override fun hasNext(): Boolean {
-            return current != null
-        }
-
-        override fun next(): Item {
-            current?.let {
-                current = it.next
-                return it.item
-            } ?: throw NoSuchElementException()
-        }
-    }
 }
