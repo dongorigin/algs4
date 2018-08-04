@@ -34,16 +34,17 @@ class WeightedQuickUnion(n: Int) : UnionFind {
 
         // 小树连接到大树上
         if (treeSize[pRoot] <= treeSize[qRoot]) {
-            // p connect q
-            parent[pRoot] = qRoot
-            treeSize[qRoot] += treeSize[pRoot]
+            connectTree(pRoot, qRoot)
         } else {
-            // q connect p
-            parent[qRoot] = pRoot
-            treeSize[pRoot] += treeSize[qRoot]
+            connectTree(qRoot, pRoot)
         }
 
         count--
+    }
+
+    private fun connectTree(sourceRoot: Int, targetRoot: Int) {
+        parent[sourceRoot] = targetRoot
+        treeSize[targetRoot] += treeSize[sourceRoot]
     }
 
 }
