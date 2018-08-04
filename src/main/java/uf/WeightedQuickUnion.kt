@@ -5,8 +5,8 @@ package uf
  */
 class WeightedQuickUnion(n: Int) : UnionFind {
     private var count = n
-    private val ids = IntArray(count, { it })
-    private val treeHeights = IntArray(count, { 1 })
+    private val parent = IntArray(count, { it }) // parent[i] = parent of i
+    private val treeSize = IntArray(count, { 1 }) // treeSize[i] = number of nodes in the subtree rooted at i
 
     override fun count(): Int {
         return count
@@ -14,8 +14,8 @@ class WeightedQuickUnion(n: Int) : UnionFind {
 
     override fun find(p: Int): Int {
         var root = p
-        while (root != ids[root]) {
-            root = ids[root]
+        while (root != parent[root]) {
+            root = parent[root]
         }
         return root
     }
@@ -33,14 +33,14 @@ class WeightedQuickUnion(n: Int) : UnionFind {
         }
 
         // 小树连接到大树上
-        if (treeHeights[pRoot] <= treeHeights[qRoot]) {
+        if (treeSize[pRoot] <= treeSize[qRoot]) {
             // p connect q
-            ids[pRoot] = qRoot
-            treeHeights[qRoot] += treeHeights[pRoot]
+            parent[pRoot] = qRoot
+            treeSize[qRoot] += treeSize[pRoot]
         } else {
             // q connect p
-            ids[qRoot] = pRoot
-            treeHeights[pRoot] += treeHeights[qRoot]
+            parent[qRoot] = pRoot
+            treeSize[pRoot] += treeSize[qRoot]
         }
 
         count--
