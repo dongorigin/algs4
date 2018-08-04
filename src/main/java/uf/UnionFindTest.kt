@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.Stopwatch
 fun main(args: Array<String>) {
     val input = In("data/largeUF.txt")
     val n = input.readInt()
-    val unionFind = QuickUnion(n)
+    val unionFind = WeightedQuickUnion(n)
 
     val stopwatch = Stopwatch()
     while (!input.isEmpty) {
