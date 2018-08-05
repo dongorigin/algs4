@@ -15,7 +15,6 @@ object Insertion : Sorter {
                     break
                 }
             }
-
         }
     }
 }
