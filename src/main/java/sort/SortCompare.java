@@ -43,6 +43,15 @@ public class SortCompare {
             case "Shell":
                 Shell.INSTANCE.sort(a);
                 break;
+            case "ShellJavaA":
+                ShellJava.sortA(a);
+                break;
+            case "ShellJavaB":
+                ShellJava.sortB(a);
+                break;
+            case "ShellKotlinRanges":
+                ShellKotlinRanges.INSTANCE.sort(a);
+                break;
             case "System":
                 Arrays.sort(a);
                 break;
