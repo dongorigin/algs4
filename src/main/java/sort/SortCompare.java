@@ -40,6 +40,9 @@ public class SortCompare {
             case "Selection":
                 Selection.INSTANCE.sort(a);
                 break;
+            case "Shell":
+                Shell.INSTANCE.sort(a);
+                break;
             case "System":
                 Arrays.sort(a);
                 break;
