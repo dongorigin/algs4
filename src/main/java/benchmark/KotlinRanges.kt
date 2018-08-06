@@ -3,6 +3,9 @@ package benchmark
 import edu.princeton.cs.algs4.Stopwatch
 
 /**
+ * View Kotlin bytecode and decompile to Java, to investigate the cause of performance differences
+ * IntelliJ IDEA: Tools -> Kotlin -> Show Kotlin Bytecode
+ *
  * @author dong on 2018/08/06.
  */
 fun main(args: Array<String>) {
@@ -22,7 +25,7 @@ fun main(args: Array<String>) {
 }
 
 /**
- * version a
+ * version A
  * decompile to Java is a for loop
  */
 fun forStandard(n: Int) {
@@ -31,8 +34,8 @@ fun forStandard(n: Int) {
 }
 
 /**
- * version b, logically equivalent to a
- * decompile to Java is a mass of code, and the performance is much lower than a
+ * version B, logically equivalent to A
+ * decompile to Java is a mass of code, and the performance is much lower than A
  */
 fun forRangesStep(n: Int) {
     for (i in 0 until n step 1) {
