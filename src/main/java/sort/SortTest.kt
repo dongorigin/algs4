@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdOut
 fun main(args: Array<String>) {
     val input = In("data/8ints.txt")
     val ints = input.readAllInts().toTypedArray()
-    Insertion.sort(ints)
+    Merge.sort(ints)
     assert(isSorted(ints))
     show(ints)
 }

@@ -52,6 +52,9 @@ public class SortCompare {
             case "ShellKotlinRanges":
                 ShellKotlinRanges.INSTANCE.sort(a);
                 break;
+            case "Merge":
+                Merge.INSTANCE.sort(a);
+                break;
             case "System":
                 Arrays.sort(a);
                 break;
