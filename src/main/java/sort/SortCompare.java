@@ -55,6 +55,9 @@ public class SortCompare {
             case "Merge":
                 Merge.INSTANCE.sort(a);
                 break;
+            case "MergeBU":
+                MergeBU.INSTANCE.sort(a);
+                break;
             case "System":
                 Arrays.sort(a);
                 break;
