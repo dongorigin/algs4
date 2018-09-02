@@ -9,13 +9,22 @@ import edu.princeton.cs.algs4.StdOut
 fun main(args: Array<String>) {
     val input = In("data/8ints.txt")
     val ints = input.readAllInts().toTypedArray()
-    Merge.sort(ints)
+    Quick.sort(ints)
     assert(isSorted(ints))
     show(ints)
 }
 
 fun <T : Comparable<T>> isSorted(array: Array<T>): Boolean {
     for (i in 1 until array.size) {
+        if (array[i] < array[i - 1]) {
+            return false
+        }
+    }
+    return true
+}
+
+fun <T : Comparable<T>> isSorted(array: Array<T>, low: Int, high: Int): Boolean {
+    for (i in low + 1..high) {
         if (array[i] < array[i - 1]) {
             return false
         }
