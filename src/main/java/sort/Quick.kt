@@ -31,12 +31,12 @@ object Quick : Sorter {
         var right = high
         while (true) {
             // left
-            while (array[left] <= partition && left < right) {
+            while (array[left] < partition && left < right) {
                 left++
             }
 
             // right
-            while (array[right] >= partition && right > left) {
+            while (array[right] > partition && right > left) {
                 right--
             }
 
