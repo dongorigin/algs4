@@ -3,7 +3,7 @@ package sort
 /**
  * @author dong on 2018/08/06.
  */
-object ShellKotlinRanges: Sorter {
+object ShellKotlinRanges : Sorter {
 
     override fun <T : Comparable<T>> sort(array: Array<T>) {
         var h = 1
@@ -16,7 +16,7 @@ object ShellKotlinRanges: Sorter {
             for (i in h until array.size) {
                 for (j in i downTo h step h) {
                     if (array[j] < array[j - h]) {
-                        Shell.swap(array, j, j - h)
+                        array.swap(j, j - h)
                     } else {
                         break
                     }

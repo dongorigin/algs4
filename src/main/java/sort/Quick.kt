@@ -44,7 +44,7 @@ object Quick : Sorter {
                 break
             }
 
-            swap(array, left, right)
+            array.swap(left, right)
 
             if (left == right - 1) {
                 break
@@ -59,7 +59,7 @@ object Quick : Sorter {
         }
 
         // a[low] a[low+1..left] a[right..hi]
-        swap(array, low, left)
+        array.swap(low, left)
 
         // a[low..left-1] <= a[left] <= a[right..hi]
         return left

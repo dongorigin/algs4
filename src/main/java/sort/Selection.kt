@@ -14,7 +14,7 @@ object Selection : Sorter {
                     minIndex = j
                 }
             }
-            swap(array, i, minIndex)
+            array.swap(i, minIndex)
         }
     }
 }

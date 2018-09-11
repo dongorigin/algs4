@@ -16,7 +16,7 @@ object Shell : Sorter {
             for (i in h until array.size) {
                 var j = i
                 while (j >= h && array[j] < array[j - h]) {
-                    swap(array, j, j - h)
+                    array.swap(j, j - h)
                     j -= h
                 }
             }

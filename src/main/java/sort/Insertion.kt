@@ -10,7 +10,7 @@ object Insertion : Sorter {
         for (i in 1 until array.size) {
             for (j in i downTo 1) {
                 if (array[j] < array[j - 1]) {
-                    swap(array, j, j - 1)
+                    array.swap(j, j - 1)
                 } else {
                     break
                 }
