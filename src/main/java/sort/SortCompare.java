@@ -61,6 +61,9 @@ public class SortCompare {
             case "Quick":
                 Quick.INSTANCE.sort(a);
                 break;
+            case "Heap":
+                Heap.INSTANCE.sort(a);
+                break;
             case "System":
                 Arrays.sort(a);
                 break;
