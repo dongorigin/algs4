@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdOut
 
 fun main(args: Array<String>) {
     val input = In("data/tinyST.txt")
-    val st = SequentialSearchST<String, Int>()
+    val st = BinarySearchTree<String, Int>()
     var i = 0
     while (!input.isEmpty) {
         val key = input.readString()
