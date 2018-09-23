@@ -1,3 +1,4 @@
+import cn.dong.algs4.Queue
 import edu.princeton.cs.algs4.StdOut
 import org.junit.Test
 
